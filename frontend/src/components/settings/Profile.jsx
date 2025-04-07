@@ -25,7 +25,7 @@ const Profile = () => {
       }
 
       try {
-        const response = await axios.get("http://localhost:5000/api/user/profile", {
+        const response = await axios.get("http://nfl-stats-1.onrender.com/api/user/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserData({
@@ -70,7 +70,7 @@ const Profile = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/user/avatar",
+        "http://nfl-stats-1.onrender.com/api/user/avatar",
         formData,
         {
           headers: {
@@ -101,7 +101,7 @@ const Profile = () => {
 
     try {
       await axios.put(
-        "http://localhost:5000/api/user/profile",
+        "http://nfl-stats-1.onrender.com/api/user/profile",
         { name: userData.name, email: userData.email },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ setIsAuthenticated }) => {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [credentials, setCredentials] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState(null);
   const [isRegistering, setIsRegistering] = useState(false);
   const navigate = useNavigate();
@@ -16,8 +16,8 @@ const Login = ({ setIsAuthenticated }) => {
     e.preventDefault();
     try {
       const url = isRegistering
-        ? "http://localhost:5000/api/auth/register"
-        : "http://localhost:5000/api/auth/login";
+        ? "http://nfl-stats-1.onrender.com/api/auth/register"
+        : "http://nfl-stats-1.onrender.com/api/auth/login";
       const response = await axios.post(url, {
         ...credentials,
         name: credentials.name || credentials.email.split("@")[0],
