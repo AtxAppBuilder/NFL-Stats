@@ -32,7 +32,7 @@ const OverviewPage = () => {
       const lastName = lastNameParts.join(" ");
 
       const playerResponse = await fetch(
-        `http://nfl-stats-1.onrender.com/api/players?first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}`
+        `https://nfl-stats-1.onrender.com/api/players?first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}`
       );
       if (!playerResponse.ok) throw new Error("Player fetch failed");
       const playerProfile = await playerResponse.json();
@@ -41,7 +41,7 @@ const OverviewPage = () => {
 
 
       const statsResponse = await fetch(
-        `http://nfl-stats-1.onrender.com/api/season_stats/search?first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}`
+        `https://nfl-stats-1.onrender.com/api/season_stats/search?first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}`
       );
       if (!statsResponse.ok) throw new Error("Stats fetch failed");
       const fetchedSeasonStats = await statsResponse.json();
@@ -49,7 +49,7 @@ const OverviewPage = () => {
 
       // Fetch salary data
       const salaryResponse = await fetch(
-        `http://nfl-stats-1.onrender.com/api/salary?first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}`
+        `https://nfl-stats-1.onrender.com/api/salary?first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}`
       );
       if (!salaryResponse.ok) throw new Error("Salary fetch failed");
       const salaryArray = await salaryResponse.json();
