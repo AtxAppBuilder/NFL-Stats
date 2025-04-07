@@ -16,8 +16,9 @@ const Login = ({ setIsAuthenticated }) => {
     e.preventDefault();
     try {
       const url = isRegistering
-        ? "https://nfl-stats-1.onrender.com/api/auth/register"
-        : "https://nfl-stats-1.onrender.com/api/auth/login";
+      ? `${import.meta.env.VITE_API_URL}/api/auth/register`
+      : `${import.meta.env.VITE_API_URL}/api/auth/login`;
+    
       const response = await axios.post(url, {
         ...credentials,
         name: credentials.name || credentials.email.split("@")[0],
